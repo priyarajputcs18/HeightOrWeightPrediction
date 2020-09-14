@@ -9,7 +9,7 @@
 			font-family: Arial, Helvetica, sans-serif;
 		}
 		body{
-			background-image: url(background.jpg);
+			background-image: url('static/background.jpg');
 			width: 100%;
 		}
 		h1{
@@ -94,7 +94,7 @@
 		<div class="col">
 			<div class="inner">
 				<div class="front">
-					<img src="measuring-measure-004-512.png" alt="" id="image1">
+					<img src="{{url_for('static' , filename='measuring-measure-004-512.png')}}" id="image1">
 					<h2>For Weight Prediction </h2>
 					<h3>Touch here</h3>
 				</div>
@@ -114,7 +114,7 @@
 		<div class="col">
 			<div class="inner">
 				<div class="front">
-					<img src="measuring-height-1593425-1351874.png" alt="" id="image2">
+					<img src="{{url_for('static' , filename='measuring-height-1593425-1351874.png')}}" alt="" id="image2">
 					<h2>For Height Prediction </h2>
 					 <h3>Touch here</h3>
 				</div>
