@@ -25,7 +25,6 @@
             background-color: transparent;
             width: 380px;
             height: 480px;
-			perspective: 1000px;
         }
         .inner{
             position: relative;
@@ -50,12 +49,12 @@
 			border-radius: 10px;
         }
         .front{
-            background-color: white;
+			background-image: linear-gradient(to right,#000046,#1CB5E0);
             color: black;
             border: 1px solid rgb(247, 170, 82);
         }
         .back{
-            background-color: rgb(165,92,233);
+            background-image: linear-gradient(to right,#56CCF2,#2F80ED);
             color: white;
             border: 1px solid white;
             transform: rotateY(-180deg);
@@ -63,28 +62,63 @@
         
 		#image1,#image2{
 			height: 300px;
-			width: 150px;
+			width: 200px;
 			padding: 20px;
-			background-color:royalblue;
+			background-color:transparent;
 			margin-top: 20px;
-		}
-		#image2{
-			background-color:skyblue;
 		}
 		h2{
 			margin-top: 10px;
-			color:teal;
+			color:white;
+			font-size: 30px;
 		}
 		h3{
 			padding: 5px;
 		}
 		p{
 			margin-top: 40px;
+			margin-bottom: 30px;
 			padding: 20px;
 			font-size: 45px;
+			color:midnightblue;
+			font-weight: bold;
 		}
 		#second{
 			background-color: mediumvioletred;
+		}
+		label{
+			font-size: 20px;
+			font-weight: bold;
+			color: #000046;
+		}
+		input[type=text]{
+			margin-bottom: 10px;
+			height: 20px;
+			border: none;
+			border-radius: 5px;
+		}
+		input[type=submit]{
+			border: none;
+			margin-bottom: 10px;
+			width: 80px;
+			height: 30px;
+			border-radius: 7px;
+			background-image: linear-gradient(to right,#0F2027,#203A43,#2C5364);
+			color: white;
+		}
+		#pre{
+			font-size: 20px;
+			color: #000046;
+			font-weight: bold;
+		}
+		@media (max-width: 850px){
+			.row{
+				display: flex;
+				flex-direction: column;
+			}
+			.col{
+				margin: 40px auto;
+			}
 		}
 	</style>
 </head>
@@ -100,14 +134,12 @@
 				</div>
 				<div class="back">
 					<p>Enter your Height and Gender:</p>
-            		<p>
                 	<form action ="/home" method = "post"> 
-                    <b> Height :  <input type="text", name='height', placeholder="Enter your height"> <br></b>
-                    <b> Gender :  <input type="text", name='gender', placeholder="Enter 0 for female and 1 for male"> <br></b>
-                     <input type="submit" , value='predict!' >
+                    <label>Height: <input type="text", name='height', placeholder="Height in inches"></label><br>
+                    <label>Gender: <input type="text", name='gender', placeholder="0 for female and 1 for male"></label><br>
+                    <input type="submit" , value='Predict' >
                 	 </form>
-                    <div>{{weight}}</div>   
-            		</p>
+                    <div id="pre">{{weight}}</div>   
 				</div>
 				</div>
 			</div>
@@ -120,14 +152,12 @@
 				</div>
 				<div class="back" id="second">
 					<p>Enter your Weight and Gender:</p>
-					<p>
 						<form action ="/home1" method = "post"> 
-							<b> Weight :  <input type="text", name='weight', placeholder="Enter"> <br></b>
-							<b> Gender :  <input type="text", name='gender', placeholder="Enter  0 for female and 1 for male"> <br></b>
-							 
-							 <input type="submit" , value='predict!' >
+							<label>Weight: <input type="text", name='weight', placeholder="Weight in pounds"></label><br>
+							<label>Gender: <input type="text", name='gender', placeholder="0 for female and 1 for male"></label><br>
+							 <input type="submit" , value='Predict' >
 						 </form>
-							<div>{{height}}</div>
+							<div id="pre">{{height}}</div>
 					</p>
 				</div>
 				</div>
